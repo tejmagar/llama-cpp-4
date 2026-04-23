@@ -4,7 +4,7 @@
 [![docs.rs](https://img.shields.io/docsrs/llama-cpp-4.svg)](https://docs.rs/llama-cpp-4)
 [![License](https://img.shields.io/crates/l/llama-cpp-4.svg)](https://crates.io/crates/llama-cpp-4)
 
-This is a fork from  [https://github.com/eugenehp/llama-cpp-rs/]( https://github.com/eugenehp/llama-cpp-rs/). It is creared specially to fix compilation in Android targets.
+This is a fork from  [https://github.com/eugenehp/llama-cpp-rs/]( https://github.com/eugenehp/llama-cpp-rs/). It is created specially to fix compilation in Android targets.
 
 Safe Rust bindings to [llama.cpp](https://github.com/ggml-org/llama.cpp), tracking upstream closely.
 
