@@ -1,0 +1,25 @@
+[package]
+name = "simple"
+version = "0.2.22"
+edition = "2021"
+description = "Example: simple for llama-cpp-4"
+license = "MIT OR Apache-2.0"
+publish = false
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+llama-cpp-4 = { path = "../../llama-cpp-4", version = "0.2.22" }
+hf-hub = { workspace = true }
+clap = { workspace = true , features = ["derive"] }
+anyhow = { workspace = true }
+encoding_rs = { workspace = true }
+
+[features]
+cuda = ["llama-cpp-4/cuda"]
+metal =  ["llama-cpp-4/metal"]
+native = ["llama-cpp-4/native"]
+vulkan = ["llama-cpp-4/vulkan"]
+
+[lints]
+workspace = true

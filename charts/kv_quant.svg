@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" font-family="system-ui,-apple-system,sans-serif">
+<rect width="720" height="400" fill="#1a1a2e" rx="12"/>
+<text x="360" y="32" fill="#e0e0e0" font-size="16" font-weight="bold" text-anchor="middle">7. KV Cache Quantization + TurboQuant</text>
+<text x="360" y="50" fill="#888" font-size="11" text-anchor="middle">Gen 64 tokens — divergence point from F16 baseline (higher = better quality)</text>
+<line x1="60" y1="200" x2="680" y2="200" stroke="#333" stroke-width="0.5"/>
+<text x="55" y="203" fill="#666" font-size="9" text-anchor="end">0ms</text>
+<line x1="60" y1="173" x2="680" y2="173" stroke="#333" stroke-width="0.5"/>
+<text x="55" y="176" fill="#666" font-size="9" text-anchor="end">100ms</text>
+<line x1="60" y1="147" x2="680" y2="147" stroke="#333" stroke-width="0.5"/>
+<text x="55" y="150" fill="#666" font-size="9" text-anchor="end">200ms</text>
+<line x1="60" y1="120" x2="680" y2="120" stroke="#333" stroke-width="0.5"/>
+<text x="55" y="123" fill="#666" font-size="9" text-anchor="end">300ms</text>
+<line x1="60" y1="93" x2="680" y2="93" stroke="#333" stroke-width="0.5"/>
+<text x="55" y="96" fill="#666" font-size="9" text-anchor="end">400ms</text>
+<rect x="98.5" y="186.2" width="30.0" height="13.8" fill="#4C78A8" rx="3" opacity="0.9"/>
+<text x="113.5" y="182.2" fill="#ccc" font-size="9" text-anchor="middle">52</text>
+<rect x="131.5" y="97.0" width="30.0" height="103.0" fill="#F58518" rx="3" opacity="0.9"/>
+<text x="146.5" y="93.0" fill="#ccc" font-size="9" text-anchor="middle">386</text>
+<text x="130.0" y="216.0" fill="#aaa" font-size="10" text-anchor="middle">F16</text>
+<rect x="198.5" y="185.9" width="30.0" height="14.1" fill="#4C78A8" rx="3" opacity="0.9"/>
+<text x="213.5" y="181.9" fill="#ccc" font-size="9" text-anchor="middle">53</text>
+<rect x="231.5" y="93.7" width="30.0" height="106.3" fill="#F58518" rx="3" opacity="0.9"/>
+<text x="246.5" y="89.7" fill="#ccc" font-size="9" text-anchor="middle">399</text>
+<text x="230.0" y="216.0" fill="#aaa" font-size="10" text-anchor="middle">Q8+turbo</text>
+<rect x="298.5" y="185.9" width="30.0" height="14.1" fill="#4C78A8" rx="3" opacity="0.9"/>
+<text x="313.5" y="181.9" fill="#ccc" font-size="9" text-anchor="middle">53</text>
+<rect x="331.5" y="90.2" width="30.0" height="109.8" fill="#F58518" rx="3" opacity="0.9"/>
+<text x="346.5" y="86.2" fill="#ccc" font-size="9" text-anchor="middle">412</text>
+<text x="330.0" y="216.0" fill="#aaa" font-size="10" text-anchor="middle">Q5+turbo</text>
+<rect x="398.5" y="185.8" width="30.0" height="14.2" fill="#4C78A8" rx="3" opacity="0.9"/>
+<text x="413.5" y="181.8" fill="#ccc" font-size="9" text-anchor="middle">53</text>
+<rect x="431.5" y="92.2" width="30.0" height="107.8" fill="#F58518" rx="3" opacity="0.9"/>
+<text x="446.5" y="88.2" fill="#ccc" font-size="9" text-anchor="middle">404</text>
+<text x="430.0" y="216.0" fill="#aaa" font-size="10" text-anchor="middle">Q4+turbo</text>
+<rect x="498.5" y="184.4" width="30.0" height="15.6" fill="#4C78A8" rx="3" opacity="0.9"/>
+<text x="513.5" y="180.4" fill="#ccc" font-size="9" text-anchor="middle">58</text>
+<rect x="531.5" y="96.7" width="30.0" height="103.3" fill="#F58518" rx="3" opacity="0.9"/>
+<text x="546.5" y="92.7" fill="#ccc" font-size="9" text-anchor="middle">387</text>
+<text x="530.0" y="216.0" fill="#aaa" font-size="10" text-anchor="middle">Q5 no-t</text>
+<rect x="598.5" y="186.1" width="30.0" height="13.9" fill="#4C78A8" rx="3" opacity="0.9"/>
+<text x="613.5" y="182.1" fill="#ccc" font-size="9" text-anchor="middle">52</text>
+<rect x="631.5" y="96.9" width="30.0" height="103.1" fill="#F58518" rx="3" opacity="0.9"/>
+<text x="646.5" y="92.9" fill="#ccc" font-size="9" text-anchor="middle">387</text>
+<text x="630.0" y="216.0" fill="#aaa" font-size="10" text-anchor="middle">Q4 no-t</text>
+<rect x="80" y="210" width="12" height="12" fill="#4C78A8" rx="2"/>
+<text x="96" y="220" fill="#ccc" font-size="11">Prefill</text>
+<rect x="80" y="228" width="12" height="12" fill="#F58518" rx="2"/>
+<text x="96" y="238" fill="#ccc" font-size="11">Gen 64 tokens</text>
+<text x="360" y="270" fill="#e0e0e0" font-size="13" font-weight="bold" text-anchor="middle">Output quality: chars before divergence from F16</text>
+<text x="132" y="323.0" fill="#aaa" font-size="11" text-anchor="end">Q8+turbo</text>
+<rect x="140" y="308" width="460.9" height="22" fill="#54A24B" rx="3" opacity="0.85"/>
+<text x="606.9" y="323.0" fill="#eee" font-size="10" font-weight="bold">char 195 (near-identical)</text>
+<text x="132" y="349.0" fill="#aaa" font-size="11" text-anchor="end">Q5+turbo</text>
+<rect x="140" y="334" width="56.7" height="22" fill="#54A24B" rx="3" opacity="0.85"/>
+<text x="202.7" y="349.0" fill="#eee" font-size="10" font-weight="bold">char 24 (coherent)</text>
+<text x="132" y="375.0" fill="#aaa" font-size="11" text-anchor="end">Q4+turbo</text>
+<rect x="140" y="360" width="56.7" height="22" fill="#EECA3B" rx="3" opacity="0.85"/>
+<text x="202.7" y="375.0" fill="#eee" font-size="10" font-weight="bold">char 24 (coherent)</text>
+<text x="132" y="401.0" fill="#aaa" font-size="11" text-anchor="end">Q5 no-t</text>
+<rect x="140" y="386" width="4.7" height="22" fill="#E45756" rx="3" opacity="0.85"/>
+<text x="150.7" y="401.0" fill="#eee" font-size="10" font-weight="bold">char 2 (DEGRADED)</text>
+<text x="132" y="427.0" fill="#aaa" font-size="11" text-anchor="end">Q4 no-t</text>
+<rect x="140" y="412" width="4.7" height="22" fill="#E45756" rx="3" opacity="0.85"/>
+<text x="150.7" y="427.0" fill="#eee" font-size="10" font-weight="bold">char 2 (DEGRADED)</text>
+</svg>

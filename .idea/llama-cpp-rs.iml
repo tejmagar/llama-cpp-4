@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="EMPTY_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/examples/batched-bench/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/chat/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/cvector-generator/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/embeddings/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/export-lora/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/fit-params/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/imatrix/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/incremental-chat/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/mtmd/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/perplexity/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/quantize/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/server/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/server/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/simple/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/split_model/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/structured/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/tokenize/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/tts/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples/turbo-quant/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/llama-cpp-4/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/llama-cpp-4/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/llama-cpp-sys-4/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

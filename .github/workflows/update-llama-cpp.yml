@@ -1,0 +1,79 @@
+name: Update llama cpp nightly
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    name: Update llama cpp
+    steps:
+      - name: Set date
+        id: date
+        run: echo "value=$(date -I)" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        name: Checkout latest
+        with:
+          submodules: recursive
+      - name: Create branch
+        run: git checkout -b update-llama-cpp-${{ steps.date.outputs.value }}
+      - name: Update submodules
+        run: git submodule update --init --recursive --remote
+      - name: Config git
+        run: |
+          git config --global user.email "update@llama.cpp"
+          git config --global user.name "LLAMA CPP"
+      - name: Detect changes
+        id: changes
+        run: |
+          git add llama-cpp-sys-4/llama.cpp
+          if git diff --cached --quiet; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Commit
+        if: steps.changes.outputs.has_changes == 'true'
+        run: git commit -am "updated llama.cpp"
+      - name: Push
+        if: steps.changes.outputs.has_changes == 'true'
+        run: git push --set-upstream origin update-llama-cpp-${{ steps.date.outputs.value }} --force
+      - name: Close any outdated PRs
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr list --json number,title --jq '.[] | select(.title | contains("Updated llama-cpp (bot)")) | .number' | xargs -I {} gh pr close {}
+      - name: Create open PR
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: actions/github-script@v9
+        with:
+          github-token: ${{ secrets.GH_TOKEN_WORKFLOW || secrets.GITHUB_TOKEN }}
+          script: |
+            const { owner, repo } = context.repo;
+            const head = "update-llama-cpp-${{ steps.date.outputs.value }}";
+            
+            try {
+              const pr = await github.rest.pulls.create({
+                owner,
+                repo,
+                title: "Updated llama-cpp (bot)",
+                body: "Automated update of llama.cpp submodule",
+                head: head,
+                base: "main"
+              });
+              console.log(`Created PR #${pr.data.number}`);
+            } catch (error) {
+              if (error.message.includes('not permitted')) {
+                console.log(`⚠️ PR creation not permitted - branch pushed but PR creation failed`);
+                console.log(`📝 Please create a PR manually or configure a PAT in repo secrets:`);
+                console.log(`   gh secret set GH_TOKEN_WORKFLOW --body "$(pbpaste)"`);
+              } else {
+                throw error;
+              }
+            }
